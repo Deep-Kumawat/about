@@ -1,10 +1,11 @@
 from pytube import YouTube
 from youtube_transcript_api import YouTubeTranscriptApi
 
-VIDEO_URL = 'https://www.youtube.com/watch?v=hiwaxlttWow'
+# VIDEO_URL = 'https://www.youtube.com/watch?v=ehUIlhKhzDA'
 
 # Create a YouTube object
-yt = YouTube(VIDEO_URL)
+userInputURL = input("enter the url of youtube video\n")
+yt = YouTube(userInputURL)
 
 # Get the video ID from the URL
 video_id = yt.video_id
@@ -22,5 +23,6 @@ with open(output_file, 'w', encoding='utf-8') as f:
         f.write(text + '\n')
 
 print(f"Transcript saved to {output_file}")
+
 
 # Use the generated .txt file and paste the generated file name in transcriptSummary.py
